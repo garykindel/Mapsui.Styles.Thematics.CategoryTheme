@@ -147,7 +147,11 @@ namespace Mapsui.Styles.Thematics
 				try
 				{
 					var cti = _items.Find(c => c.Matches(tval));
-					return cti.Style;
+					if (cti != null && cti.Style!=null)
+					{
+						return cti.Style;
+					}
+					return _default;
 				}
 				catch(NullReferenceException)
 				{
@@ -197,7 +201,12 @@ namespace Mapsui.Styles.Thematics
                 try
                 {
                     var cti = _items.Find(c => c.Matches(tval));
-                    return cti.Style;
+                    if (cti != null && cti.Style != null)
+                    {
+
+                        return cti.Style;
+                    }
+                    return _default;
                 }
                 catch (NullReferenceException)
                 {
